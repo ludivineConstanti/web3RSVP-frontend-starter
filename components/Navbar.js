@@ -5,7 +5,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useDisconnect } from "wagmi";
 
 export default function Navbar() {
-  const { data: account } = useAccount();
+  const { isConnected } = useAccount();
   const { disconnect } = useDisconnect();
   const [mounted, setMounted] = useState(false);
 
@@ -32,8 +32,11 @@ export default function Navbar() {
                   Create Event
                 </a>
               </Link>
-              {account ? (
-                <Navmenu account={account} disconnect={() => disconnect()} />
+              {isConnected ? (
+                <Navmenu
+                  account={isConnected}
+                  disconnect={() => disconnect()}
+                />
               ) : (
                 <ConnectButton />
               )}
