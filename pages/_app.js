@@ -10,6 +10,7 @@ import { ApolloProvider } from "@apollo/client";
 import client from "../apollo-client";
 
 export default function MyApp({ Component, pageProps }) {
+  console.log("client", client);
   const infuraId = process.env.NEXT_PUBLIC_INFURA_ID;
   const projectId = process.env.CLOUD_WALLET_PROJECT_ID;
 

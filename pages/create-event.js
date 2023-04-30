@@ -56,7 +56,6 @@ export default function CreateEvent() {
   }
 
   const createEvent = async (cid) => {
-    console.log("create event", cid);
     try {
       const rsvpContract = connectContract();
 

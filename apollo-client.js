@@ -1,9 +1,7 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-const uri = process.env.APOLLO_URI;
-
 const client = new ApolloClient({
-  uri,
+  uri: "https://api.thegraph.com/subgraphs/name/ludivineconstanti/subgraph30daysofweb3",
   cache: new InMemoryCache(),
 });
 
